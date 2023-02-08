@@ -1,25 +1,28 @@
 "use strict";
 
 // Selecting elements
-const scoreElement0 = document.querySelector("#score--0");
-const scoreElement1 = document.getElementById("score--1");
+const scorePlayer0 = document.querySelector("#score--0");
+const scorePlayer1 = document.getElementById("score--1");
 
-const currentElement0 = document.getElementById("current--0");
-const currentElement1 = document.getElementById("current--1");
+const currentPlayer0 = document.getElementById("current--0");
+const currentPlayer1 = document.getElementById("current--1");
 
 const diceElement = document.querySelector(".dice");
 const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
+// Starting conditions
 let currentScore = 0;
 let activePlayer = 0;
 
 const scores = [0, 0];
 
+newGame();
+
 function newGame() {
-  scoreElement0.textContent = 0;
-  scoreElement1.textContent = 0;
+  scorePlayer0.textContent = 0;
+  scorePlayer1.textContent = 0;
 
   scores[0] = 0;
   scores[1] = 0;
@@ -29,8 +32,6 @@ function newGame() {
 
   diceElement.classList.add("hidden");
 }
-
-newGame();
 
 btnNew.addEventListener("click", newGame);
 
