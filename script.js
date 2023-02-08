@@ -26,7 +26,8 @@ btnRoll.addEventListener("click", function () {
 
   diceElement.classList.remove("hidden");
 
-  diceElement.setAttribute("src", changeDiceImage());
+  // diceElement.setAttribute("src", changeDiceImage());
+  diceElement.src = changeDiceImage();
 
   function changeDiceImage() {
     return `./src/img/dice-${dice}.png`;
