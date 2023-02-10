@@ -36,6 +36,14 @@ function newGame() {
   diceElement.classList.add("hidden");
 }
 
+function switchPlayer() {
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  currentScore = 0;
+  backgroundPlayer0.classList.toggle("player--active");
+  backgroundPlayer1.classList.toggle("player--active");
+}
+
 btnNew.addEventListener("click", newGame);
 
 btnRoll.addEventListener("click", function () {
@@ -60,11 +68,6 @@ btnRoll.addEventListener("click", function () {
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
   } else {
-    // Switch to the next player
-    document.getElementById(`current--${activePlayer}`).textContent = 0;
-    activePlayer = activePlayer === 0 ? 1 : 0;
-    currentScore = 0;
-    backgroundPlayer0.classList.toggle("player--active");
-    backgroundPlayer1.classList.toggle("player--active");
+    switchPlayer();
   }
 });
