@@ -96,6 +96,8 @@ btnHold.addEventListener("click", function () {
         .querySelector(`.player--${activePlayer}`)
         .classList.remove("player--active");
 
+      diceElement.classList.add("hidden");
+
       gameFinished = true;
     } else {
       switchPlayer();
