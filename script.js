@@ -27,6 +27,9 @@ function newGame() {
   scorePlayer0.textContent = 0;
   scorePlayer1.textContent = 0;
 
+  currentPlayer0.textContent = 0;
+  currentPlayer1.textContent = 0;
+
   scores[0] = 0;
   scores[1] = 0;
 
@@ -34,6 +37,9 @@ function newGame() {
   activePlayer = 0;
 
   diceElement.classList.add("hidden");
+
+  backgroundPlayer0.classList.add("player--active");
+  backgroundPlayer1.classList.remove("player--active");
 }
 
 function switchPlayer() {
