@@ -15,13 +15,7 @@ const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
-// Starting conditions
-let currentScore = 0;
-let activePlayer = 0;
-
-let gameFinished = false;
-
-const scores = [0, 0];
+let currentScore, activePlayer, gameFinished, scores;
 
 newGame();
 
@@ -32,19 +26,16 @@ function newGame() {
   currentPlayer0.textContent = 0;
   currentPlayer1.textContent = 0;
 
-  scores[0] = 0;
-  scores[1] = 0;
+  scores = [0, 0];
 
   currentScore = 0;
-
-  document
-    .querySelector(`.player--${activePlayer}`)
-    .classList.remove("player--winner");
 
   activePlayer = 0;
 
   diceElement.classList.add("hidden");
 
+  document.querySelector(`.player--0`).classList.remove("player--winner");
+  document.querySelector(`.player--1`).classList.remove("player--winner");
   backgroundPlayer0.classList.add("player--active");
   backgroundPlayer1.classList.remove("player--active");
 
